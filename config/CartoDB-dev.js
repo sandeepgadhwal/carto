@@ -12,7 +12,7 @@ module.exports.log_filename = 'logs/cartodb-sql-api.log';
 // Regular expression pattern to extract username
 // from hostname. Must have a single grabbing block.
 module.exports.user_from_host = '^([^\\.]+)\\.';
-module.exports.node_port    = 8080;
+module.exports.node_port    = 8282;
 module.exports.node_host    = '0.0.0.0';
 // idle socket timeout, in miliseconds
 module.exports.node_socket_timeout    = 600000;
