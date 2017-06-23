@@ -15,7 +15,7 @@ defaults: &defaults
   http_port:           # 3000 # nil|integer. HTTP port to use when building urls. Leave empty to use default (80)
   https_port:          # nil|integer. HTTPS port to use when building urls. Leave empty to use default (443)
   secret_token:       '71c2b25921b84a1cb21c71503ab8fb23'
-  account_host:       'carto.cleverapps.io:3000'
+  account_host:       'carto.cleverapps.io:8080'
   account_path:       '/account'
   vizjson_cache_domains: ['.localhost']
   data_library:
