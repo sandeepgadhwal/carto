@@ -19,7 +19,7 @@ RUN mkdir -p /cartodb/log && touch /cartodb/log/users_modifications && \
     bash script/setup_organization.sh" && \
 	service postgresql stop && service redis-server stop
 
-EXPOSE 8080
+EXPOSE 80
 
 ENV GDAL_DATA /usr/share/gdal/1.11
 
