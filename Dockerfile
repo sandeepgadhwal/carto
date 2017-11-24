@@ -15,9 +15,11 @@ ENV PATH /usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/s
 RUN mkdir -p /cartodb/log && touch /cartodb/log/users_modifications && \
     /opt/varnish/sbin/varnishd -a :6081 -T localhost:6082 -s malloc,256m -f /etc/varnish.vcl && \
     service postgresql start && service redis-server start && \
-	bash -l -c "cd /cartodb && bash script/create_dev_user || bash script/create_dev_user && \
-    bash script/setup_organization.sh" && \
-	service postgresql stop && service redis-server stop
+	bash -l -c "cd /cartodb && bash script/create_dev_user && \
+    bash script/setup_organization.sh && bash script/geocoder.sh" && \
+	service postgresql stop && service redis-server stop && \
+    chmod +x /cartodb/script/fill_geocoder.sh && \
+    chmod +x /cartodb/script/sync_tables_trigger.sh
 
 EXPOSE 8080
 
